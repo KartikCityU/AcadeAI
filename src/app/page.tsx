@@ -634,12 +634,13 @@ export default function HomePage() {
                   background: 'white',
                   borderRadius: '16px',
                   padding: '2rem',
-                  boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
+                  boxShadow: revealedFeatures.includes(index) 
+                    ? '0 8px 25px rgba(59, 130, 246, 0.15)' 
+                    : '0 4px 6px rgba(0, 0, 0, 0.05)',
                   border: '1px solid rgba(59, 130, 246, 0.1)',
                   cursor: 'pointer',
                   transition: 'all 0.3s ease',
-                  transform: revealedFeatures.includes(index) ? 'translateY(-4px)' : 'translateY(0)',
-                  boxShadowHover: '0 8px 25px rgba(59, 130, 246, 0.15)'
+                  transform: revealedFeatures.includes(index) ? 'translateY(-4px)' : 'translateY(0)'
                 }}
                 onClick={() => handleFeatureReveal(index)}
               >
