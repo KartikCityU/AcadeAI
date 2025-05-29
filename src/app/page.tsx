@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState('students');
@@ -159,8 +159,8 @@ export default function HomePage() {
               marginBottom: '2rem',
               lineHeight: '1.6'
             }}>
-              Transform your school's academic performance with AI-driven personalized learning, 
-              comprehensive analytics, and adaptive tutoring that understands each student's unique learning journey.
+              Transform your school&apos;s academic performance with AI-driven personalized learning, 
+              comprehensive analytics, and adaptive tutoring that understands each student&apos;s unique learning journey.
             </p>
             
             <div style={{
@@ -390,7 +390,7 @@ export default function HomePage() {
                   padding: '2rem',
                   boxShadow: '0 10px 25px rgba(0,0,0,0.1)'
                 }}>
-                  <h4 style={{ marginBottom: '1rem', color: '#1f2937' }}>📊 Today's Learning Plan</h4>
+                  <h4 style={{ marginBottom: '1rem', color: '#1f2937' }}>📊 Today&apos;s Learning Plan</h4>
                   <div style={{ fontSize: '0.9rem', color: '#6b7280', lineHeight: '1.6' }}>
                     <div style={{ marginBottom: '0.8rem', padding: '0.5rem', background: '#fef3c7', borderRadius: '4px' }}>
                       📐 Geometry: Triangle Properties (20 min)
@@ -495,7 +495,7 @@ export default function HomePage() {
                     marginBottom: '1.5rem',
                     color: '#1f2937'
                   }}>
-                    Stay Connected to Your Child's Learning
+                    Stay Connected to Your Child&apos;s Learning
                   </h3>
                   <ul style={{
                     listStyle: 'none',
@@ -554,7 +554,7 @@ export default function HomePage() {
                         💡 Suggestion for Tonight
                       </div>
                       <div style={{ color: '#92400e' }}>
-                        Review multiplication tables 6-8 for 10 minutes before tomorrow's quiz.
+                        Review multiplication tables 6-8 for 10 minutes before tomorrow&apos;s quiz.
                       </div>
                     </div>
                   </div>
@@ -618,7 +618,7 @@ export default function HomePage() {
               {
                 icon: '🎯',
                 title: "Intelligent Content Delivery",
-                description: "Smart content recommendation system that delivers the right practice problems and explanations at exactly the right moment in a student's learning journey.",
+                description: "Smart content recommendation system that delivers the right practice problems and explanations at exactly the right moment in a student&apos;s learning journey.",
                 details: "Our content engine understands prerequisite knowledge and learning dependencies to optimize skill building progression."
               },
               {
@@ -928,7 +928,7 @@ export default function HomePage() {
                 opacity: '0.9',
                 fontStyle: 'italic'
               }}>
-                "This report automatically includes actionable recommendations for each student and suggested interventions for struggling learners."
+                &quot;This report automatically includes actionable recommendations for each student and suggested interventions for struggling learners.&quot;
               </div>
             </div>
           </div>
@@ -1011,7 +1011,7 @@ export default function HomePage() {
               marginBottom: '2rem',
               color: 'white'
             }}>
-              Ready to Transform Your School's Academic Performance?
+              Ready to Transform Your School&apos;s Academic Performance?
             </h3>
             
             <div style={{
