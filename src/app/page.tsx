@@ -66,7 +66,7 @@ export default function HomePage() {
               fontWeight: '700',
               color: '#1f2937',
               fontFamily: 'Playfair Display, serif'
-            }}>AcademAI</span>
+            }}>AcadeAI</span>
           </div>
           
           {/* Desktop Navigation */}
