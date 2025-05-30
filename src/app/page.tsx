@@ -66,7 +66,7 @@ export default function HomePage() {
               fontWeight: '700',
               color: '#1f2937',
               fontFamily: 'Playfair Display, serif'
-            }}>AcadeAI</span>
+            }}>AcademAI</span>
           </div>
           
           {/* Desktop Navigation */}
@@ -565,7 +565,7 @@ export default function HomePage() {
                 icon: '🎯',
                 title: "Personalization That Works",
                 description: "Technology that adapts to each person's unique way of thinking and learning.",
-                hint: "No two minds are alike. Neither should be their learning..."
+                hint: "                  No two minds are alike. Neither should be their learning..."
               },
               {
                 icon: '🌊',
