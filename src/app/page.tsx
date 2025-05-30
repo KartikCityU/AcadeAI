@@ -101,7 +101,7 @@ export default function HomePage() {
               fontWeight: '700',
               color: '#1f2937',
               fontFamily: 'Playfair Display, serif'
-            }}>AcadeAI</span>
+            }}>AcademAI</span>
           </div>
           
           {/* Desktop Navigation */}
@@ -1068,7 +1068,7 @@ export default function HomePage() {
                   fontWeight: '700',
                   fontFamily: 'Playfair Display, serif'
                 }}>
-                  AcadeAI
+                  AcademAI
                 </span>
               </div>
               <p style={{
@@ -1181,7 +1181,7 @@ export default function HomePage() {
             textAlign: isMobile ? 'center' : 'left'
           }}>
             <p style={{ margin: 0 }}>
-              © 2025 AcadeAI. All rights reserved.
+              © 2025 AcademAI. All rights reserved.
             </p>
             <p style={{ margin: 0 }}>
               Building tomorrow's learning, today
@@ -1266,7 +1266,7 @@ export default function HomePage() {
                     color: '#6b7280',
                     fontSize: '1rem'
                   }}>
-                    Be the first to know when AcadeAI launches. Get early access and exclusive updates.
+                    Be the first to know when AcademAI launches. Get early access and exclusive updates.
                   </p>
                 </div>
 
@@ -1347,8 +1347,8 @@ export default function HomePage() {
                       marginTop: '1rem',
                       transition: 'transform 0.2s ease'
                     }}
-                    onMouseEnter={(e) => e.target.style.transform = 'translateY(-2px)'}
-                    onMouseLeave={(e) => e.target.style.transform = 'translateY(0)'}
+                    onMouseEnter={(e) => (e.target as HTMLButtonElement).style.transform = 'translateY(-2px)'}
+                    onMouseLeave={(e) => (e.target as HTMLButtonElement).style.transform = 'translateY(0)'}
                   >
                     Join the Waitlist
                   </button>
