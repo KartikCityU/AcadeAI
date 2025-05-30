@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -565,7 +566,7 @@ export default function HomePage() {
                 icon: '🎯',
                 title: "Personalization That Works",
                 description: "Technology that adapts to each person's unique way of thinking and learning.",
-                hint: "                  No two minds are alike. Neither should be their learning..."
+                hint: "No two minds are alike. Neither should be their learning..."
               },
               {
                 icon: '🌊',
@@ -820,7 +821,7 @@ export default function HomePage() {
                 opacity: '0.9',
                 fontStyle: 'italic'
               }}>
-                &quot;Great things take time. We're building something that will last.&quot;
+                "Great things take time. We're building something that will last."
               </div>
             </div>
           </div>
