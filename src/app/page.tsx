@@ -8,6 +8,10 @@ export default function HomePage() {
   const [revealedFeatures, setRevealedFeatures] = useState<number[]>([]);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [showWaitlistModal, setShowWaitlistModal] = useState(false);
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [isSubmitted, setIsSubmitted] = useState(false);
   
   useEffect(() => {
     const checkMobile = () => {
@@ -23,6 +27,36 @@ export default function HomePage() {
     if (!revealedFeatures.includes(index)) {
       setRevealedFeatures([...revealedFeatures, index]);
     }
+  };
+
+  const handleLearnMore = () => {
+    document.getElementById('approach')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleJoinWaitlist = () => {
+    setShowWaitlistModal(true);
+  };
+
+  const handleWaitlistSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email && name) {
+      // Here you would typically send to your backend/database
+      console.log('Waitlist submission:', { name, email });
+      setIsSubmitted(true);
+      setTimeout(() => {
+        setShowWaitlistModal(false);
+        setIsSubmitted(false);
+        setEmail('');
+        setName('');
+      }, 2000);
+    }
+  };
+
+  const closeModal = () => {
+    setShowWaitlistModal(false);
+    setIsSubmitted(false);
+    setEmail('');
+    setName('');
   };
 
   return (
@@ -90,28 +124,34 @@ export default function HomePage() {
             gap: '1rem', 
             alignItems: 'center' 
           }}>
-            <button style={{
-              background: 'transparent',
-              color: '#3b82f6',
-              padding: '0.6rem 1.2rem',
-              border: '1px solid #3b82f6',
-              borderRadius: '6px',
-              fontWeight: '500',
-              fontSize: '0.9rem',
-              cursor: 'pointer'
-            }}>
+            <button 
+              onClick={handleLearnMore}
+              style={{
+                background: 'transparent',
+                color: '#3b82f6',
+                padding: '0.6rem 1.2rem',
+                border: '1px solid #3b82f6',
+                borderRadius: '6px',
+                fontWeight: '500',
+                fontSize: '0.9rem',
+                cursor: 'pointer'
+              }}
+            >
               Learn More
             </button>
-            <button style={{
-              background: 'linear-gradient(135deg, #3b82f6, #1d4ed8)',
-              color: 'white',
-              padding: '0.6rem 1.2rem',
-              borderRadius: '6px',
-              border: 'none',
-              fontWeight: '500',
-              fontSize: '0.9rem',
-              cursor: 'pointer'
-            }}>
+            <button 
+              onClick={handleJoinWaitlist}
+              style={{
+                background: 'linear-gradient(135deg, #3b82f6, #1d4ed8)',
+                color: 'white',
+                padding: '0.6rem 1.2rem',
+                borderRadius: '6px',
+                border: 'none',
+                fontWeight: '500',
+                fontSize: '0.9rem',
+                cursor: 'pointer'
+              }}
+            >
               Get Notified
             </button>
           </div>
@@ -157,26 +197,32 @@ export default function HomePage() {
               gap: '0.5rem',
               marginTop: '1rem'
             }}>
-              <button style={{
-                background: 'transparent',
-                color: '#3b82f6',
-                padding: '0.8rem',
-                border: '1px solid #3b82f6',
-                borderRadius: '6px',
-                fontWeight: '500',
-                cursor: 'pointer'
-              }}>
+              <button 
+                onClick={handleLearnMore}
+                style={{
+                  background: 'transparent',
+                  color: '#3b82f6',
+                  padding: '0.8rem',
+                  border: '1px solid #3b82f6',
+                  borderRadius: '6px',
+                  fontWeight: '500',
+                  cursor: 'pointer'
+                }}
+              >
                 Learn More
               </button>
-              <button style={{
-                background: 'linear-gradient(135deg, #3b82f6, #1d4ed8)',
-                color: 'white',
-                padding: '0.8rem',
-                borderRadius: '6px',
-                border: 'none',
-                fontWeight: '500',
-                cursor: 'pointer'
-              }}>
+              <button 
+                onClick={handleJoinWaitlist}
+                style={{
+                  background: 'linear-gradient(135deg, #3b82f6, #1d4ed8)',
+                  color: 'white',
+                  padding: '0.8rem',
+                  borderRadius: '6px',
+                  border: 'none',
+                  fontWeight: '500',
+                  cursor: 'pointer'
+                }}
+              >
                 Get Notified
               </button>
             </div>
@@ -257,30 +303,36 @@ export default function HomePage() {
               marginBottom: '3rem',
               justifyContent: isMobile ? 'center' : 'flex-start'
             }}>
-              <button style={{
-                background: 'linear-gradient(135deg, #3b82f6, #1d4ed8)',
-                color: 'white',
-                padding: '1rem 2rem',
-                borderRadius: '8px',
-                border: 'none',
-                fontWeight: '600',
-                fontSize: '1rem',
-                cursor: 'pointer',
-                width: isMobile ? '100%' : 'auto'
-              }}>
+              <button 
+                onClick={handleJoinWaitlist}
+                style={{
+                  background: 'linear-gradient(135deg, #3b82f6, #1d4ed8)',
+                  color: 'white',
+                  padding: '1rem 2rem',
+                  borderRadius: '8px',
+                  border: 'none',
+                  fontWeight: '600',
+                  fontSize: '1rem',
+                  cursor: 'pointer',
+                  width: isMobile ? '100%' : 'auto'
+                }}
+              >
                 Join the Waitlist
               </button>
-              <button style={{
-                background: 'transparent',
-                color: '#3b82f6',
-                padding: '1rem 2rem',
-                border: '2px solid #3b82f6',
-                borderRadius: '8px',
-                fontWeight: '600',
-                fontSize: '1rem',
-                cursor: 'pointer',
-                width: isMobile ? '100%' : 'auto'
-              }}>
+              <button 
+                onClick={handleLearnMore}
+                style={{
+                  background: 'transparent',
+                  color: '#3b82f6',
+                  padding: '1rem 2rem',
+                  border: '2px solid #3b82f6',
+                  borderRadius: '8px',
+                  fontWeight: '600',
+                  fontSize: '1rem',
+                  cursor: 'pointer',
+                  width: isMobile ? '100%' : 'auto'
+                }}
+              >
                 Learn More
               </button>
             </div>
@@ -914,30 +966,36 @@ export default function HomePage() {
               justifyContent: 'center',
               marginBottom: '2rem'
             }}>
-              <button style={{
-                background: 'linear-gradient(135deg, #3b82f6, #1d4ed8)',
-                color: 'white',
-                padding: '1rem 2.5rem',
-                borderRadius: '8px',
-                border: 'none',
-                fontWeight: '600',
-                fontSize: '1.1rem',
-                cursor: 'pointer',
-                width: isMobile ? '100%' : 'auto'
-              }}>
+              <button 
+                onClick={handleJoinWaitlist}
+                style={{
+                  background: 'linear-gradient(135deg, #3b82f6, #1d4ed8)',
+                  color: 'white',
+                  padding: '1rem 2.5rem',
+                  borderRadius: '8px',
+                  border: 'none',
+                  fontWeight: '600',
+                  fontSize: '1.1rem',
+                  cursor: 'pointer',
+                  width: isMobile ? '100%' : 'auto'
+                }}
+              >
                 Join the Waitlist
               </button>
-              <button style={{
-                background: 'transparent',
-                color: 'white',
-                padding: '1rem 2.5rem',
-                border: '2px solid white',
-                borderRadius: '8px',
-                fontWeight: '600',
-                fontSize: '1.1rem',
-                cursor: 'pointer',
-                width: isMobile ? '100%' : 'auto'
-              }}>
+              <button 
+                onClick={handleLearnMore}
+                style={{
+                  background: 'transparent',
+                  color: 'white',
+                  padding: '1rem 2.5rem',
+                  border: '2px solid white',
+                  borderRadius: '8px',
+                  fontWeight: '600',
+                  fontSize: '1.1rem',
+                  cursor: 'pointer',
+                  width: isMobile ? '100%' : 'auto'
+                }}
+              >
                 Follow Updates
               </button>
             </div>
@@ -1131,6 +1189,215 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
+
+      {/* Waitlist Modal */}
+      {showWaitlistModal && (
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: 'rgba(0, 0, 0, 0.8)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex: 10000,
+          padding: '1rem'
+        }}>
+          <div style={{
+            background: 'white',
+            borderRadius: '16px',
+            padding: '2rem',
+            maxWidth: '500px',
+            width: '100%',
+            position: 'relative',
+            boxShadow: '0 20px 40px rgba(0, 0, 0, 0.3)'
+          }}>
+            <button
+              onClick={closeModal}
+              style={{
+                position: 'absolute',
+                top: '1rem',
+                right: '1rem',
+                background: 'none',
+                border: 'none',
+                fontSize: '1.5rem',
+                cursor: 'pointer',
+                color: '#6b7280',
+                width: '32px',
+                height: '32px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                borderRadius: '50%'
+              }}
+            >
+              ✕
+            </button>
+
+            {!isSubmitted ? (
+              <>
+                <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+                  <div style={{
+                    width: '64px',
+                    height: '64px',
+                    background: 'linear-gradient(135deg, #3b82f6, #1d4ed8)',
+                    borderRadius: '16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: 'white',
+                    fontWeight: 'bold',
+                    fontSize: '2rem',
+                    margin: '0 auto 1rem'
+                  }}>
+                    A
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.5rem',
+                    fontWeight: '700',
+                    marginBottom: '0.5rem',
+                    color: '#1f2937'
+                  }}>
+                    Join the Waitlist
+                  </h3>
+                  <p style={{
+                    color: '#6b7280',
+                    fontSize: '1rem'
+                  }}>
+                    Be the first to know when AcadeAI launches. Get early access and exclusive updates.
+                  </p>
+                </div>
+
+                <form onSubmit={handleWaitlistSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  <div>
+                    <label style={{
+                      display: 'block',
+                      fontSize: '0.9rem',
+                      fontWeight: '600',
+                      color: '#374151',
+                      marginBottom: '0.5rem'
+                    }}>
+                      Full Name
+                    </label>
+                    <input
+                      type="text"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      required
+                      placeholder="Enter your full name"
+                      style={{
+                        width: '100%',
+                        padding: '0.75rem',
+                        border: '2px solid #e5e7eb',
+                        borderRadius: '8px',
+                        fontSize: '1rem',
+                        outline: 'none',
+                        transition: 'border-color 0.3s ease',
+                        boxSizing: 'border-box'
+                      }}
+                      onFocus={(e) => e.target.style.borderColor = '#3b82f6'}
+                      onBlur={(e) => e.target.style.borderColor = '#e5e7eb'}
+                    />
+                  </div>
+
+                  <div>
+                    <label style={{
+                      display: 'block',
+                      fontSize: '0.9rem',
+                      fontWeight: '600',
+                      color: '#374151',
+                      marginBottom: '0.5rem'
+                    }}>
+                      Email Address
+                    </label>
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                      placeholder="Enter your email address"
+                      style={{
+                        width: '100%',
+                        padding: '0.75rem',
+                        border: '2px solid #e5e7eb',
+                        borderRadius: '8px',
+                        fontSize: '1rem',
+                        outline: 'none',
+                        transition: 'border-color 0.3s ease',
+                        boxSizing: 'border-box'
+                      }}
+                      onFocus={(e) => e.target.style.borderColor = '#3b82f6'}
+                      onBlur={(e) => e.target.style.borderColor = '#e5e7eb'}
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    style={{
+                      background: 'linear-gradient(135deg, #3b82f6, #1d4ed8)',
+                      color: 'white',
+                      padding: '1rem',
+                      borderRadius: '8px',
+                      border: 'none',
+                      fontWeight: '600',
+                      fontSize: '1rem',
+                      cursor: 'pointer',
+                      marginTop: '1rem',
+                      transition: 'transform 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => e.target.style.transform = 'translateY(-2px)'}
+                    onMouseLeave={(e) => e.target.style.transform = 'translateY(0)'}
+                  >
+                    Join the Waitlist
+                  </button>
+
+                  <p style={{
+                    fontSize: '0.8rem',
+                    color: '#6b7280',
+                    textAlign: 'center',
+                    marginTop: '1rem'
+                  }}>
+                    We'll never spam you. Unsubscribe at any time.
+                  </p>
+                </form>
+              </>
+            ) : (
+              <div style={{ textAlign: 'center', padding: '2rem 0' }}>
+                <div style={{
+                  width: '64px',
+                  height: '64px',
+                  background: '#10b981',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'white',
+                  fontSize: '2rem',
+                  margin: '0 auto 1rem'
+                }}>
+                  ✓
+                </div>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  marginBottom: '0.5rem',
+                  color: '#1f2937'
+                }}>
+                  You're on the list!
+                </h3>
+                <p style={{
+                  color: '#6b7280',
+                  fontSize: '1rem'
+                }}>
+                  Thanks for joining! We'll keep you updated on our progress.
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
       <style jsx>{`
         @keyframes pulse {
