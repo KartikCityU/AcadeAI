@@ -67,7 +67,7 @@ export default function HomePage() {
               fontWeight: '700',
               color: '#1f2937',
               fontFamily: 'Playfair Display, serif'
-            }}>AcademAI</span>
+            }}>AcadeAI</span>
           </div>
           
           {/* Desktop Navigation */}
@@ -1010,7 +1010,7 @@ export default function HomePage() {
                   fontWeight: '700',
                   fontFamily: 'Playfair Display, serif'
                 }}>
-                  AcademAI
+                  AcadeAI
                 </span>
               </div>
               <p style={{
@@ -1123,7 +1123,7 @@ export default function HomePage() {
             textAlign: isMobile ? 'center' : 'left'
           }}>
             <p style={{ margin: 0 }}>
-              © 2025 AcademAI. All rights reserved.
+              © 2025 AcadeAI. All rights reserved.
             </p>
             <p style={{ margin: 0 }}>
               Building tomorrow's learning, today
